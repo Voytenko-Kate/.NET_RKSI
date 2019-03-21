@@ -1,0 +1,14 @@
+Right change:   1
+Left change: 1  1
+Change operation: 1 Mul 1
+Right change: 1 Mul 2
+Left change: 2 Mul 2
+Count: 2 Mul 2 = 2
+Change operation: 2 Mul 2
+Right change: 2 Mul 3
+Left change: 6 Mul 3
+Count: 6 Mul 3 = 6
+Change operation: 6 Mul 3
+Right change: 6 Mul 4
+Left change: 24 Mul 4
+Count: 24 Mul 4 = 24

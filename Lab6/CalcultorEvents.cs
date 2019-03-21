@@ -27,7 +27,7 @@ namespace Lab6
             {
                 str.Append(Message).Append(": ");
             }
-            str.AppendJoin(' ', new object[] { LeftValue, (char)Operation, RightValue});
+            str.AppendJoin(' ', new object[] { LeftValue.ToString(), Operation.ToString(), RightValue.ToString() });
             return str.ToString();
         }
     }
@@ -36,15 +36,15 @@ namespace Lab6
     {
         public readonly double Result;
 
-        ComputeEventArgs(double leftVal, double rightVal, CalculatorOperation op, double result) :
-            base(null, leftVal, rightVal, op)
+        public ComputeEventArgs(double? leftVal, double? rightVal, CalculatorOperation? op, double? result) :
+            base("Count", leftVal, rightVal, op)
         {
-            Result = result;
+            Result = result.Value;
         }
 
         public override string ToString()
         {
-            return base.ToString() + " = " + Result;
+            return base.ToString() + " = " + Result.ToString();
         }
     }
 

@@ -21,18 +21,16 @@ namespace Lab6
                 if (c != ' ')
                     newExp += c;
             expression = newExp;
-            Console.Write(expression);
             foreach(char c in expression)
             {
                 if (Char.IsDigit(c))
                 {
                     calc?.AddDigit(c - '0');
-                    //Console.WriteLine(c - '0');
                 }
                 else if (c == '=')
                 {
                     calc.Compute();
-                    Console.WriteLine($"{calc.Result}");
+                    Console.WriteLine(calc.Result);
                     calc.Clear();
                 }
                 else
@@ -41,7 +39,6 @@ namespace Lab6
 
                     if (Enum.IsDefined(typeof(CalculatorOperation), op))
                     {
-                        //Console.WriteLine((char)(CalculatorOperation)op);
                         calc.AddOperation((CalculatorOperation)op);
                     }
                     else
@@ -50,15 +47,21 @@ namespace Lab6
                     }
                 }
             }
+            calc.Clear();
         }
 
         static void Main(string[] args)
         {
             ICalculator calc = new Calculator();
-
+            Logger logger = new Logger("logs.txt");
+            calc.OnDidChangeLeft += logger.WriteLogs;
+            calc.OnDidChangeRight += logger.WriteLogs;
+            calc.OnDidChangeOperation += logger.WriteLogs;
+            calc.OnUnableToCompute += logger.WriteLogs;
+            calc.OnDidCompute += logger.WriteLogs;
             try
             {
-                Parse(calc, "9/0=");
+                Parse(calc, "1*2*3*4=");
             }
             catch (ArgumentException e)
             {
