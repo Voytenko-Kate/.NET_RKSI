@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StudentData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>12321</Name>
+  <Gender>Female</Gender>
+  <BirthDay>2000-12-13T00:00:00</BirthDay>
+  <Passport>1234 123456</Passport>
+  <City>Анапа</City>
+  <Address>13</Address>
+  <Phone>+7 (113) 123-31-23</Phone>
+  <Email>qwe@wqe.ru</Email>
+  <Track>Обеспечение информационной безопасности автоматизированных систем</Track>
+  <Course>1</Course>
+  <Group>1</Group>
+</StudentData>
