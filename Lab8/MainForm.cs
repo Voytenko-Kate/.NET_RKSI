@@ -43,6 +43,7 @@ namespace Lab8
                 return;
             XmlSerializer serializer = new XmlSerializer(typeof(StudentData));
             var sw = new FileStream(ofd.FileName, FileMode.Open);
+            sw.Close();
             StudentData student = (StudentData) serializer.Deserialize(sw);
             textBox1.Text = student.Name;
             textBox2.Text = student.Gender.ToString();

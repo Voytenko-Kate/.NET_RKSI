@@ -37,8 +37,8 @@ namespace Lab8
         {
             forms.Remove(sender as Form);
 
-            if (forms.Count == 0)
-                ExitThread();
+            //if (forms.Count == 0)
+            //    ExitThread();
         }
 
         private void OnShowNext(Form form)
