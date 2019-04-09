@@ -56,6 +56,7 @@ namespace Lab8
             textBox9.Text = student.Track;
             textBox10.Text = student.Course.ToString();
             textBox11.Text = student.Group.ToString();
+            sw.Close();
         }
     }
 }
